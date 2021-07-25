@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% set active = "Food & Travel" %}
+
+{% block title %}
+Food & Travel
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="container-fluid text-center">
+        <br><br><br>
+        <h3>Food & Travel Blogs</h3>
+        <br>
+        {% for post_name in post_names %}
+        <div class="row">
+            <div class="col-md-6 col-xs-6 text-right">
+                <img src="/static/img/{{photos[loop.index-1]}}" style="height: 350px;" />
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <a href="/food_travel/{{post_name}}">
+                    <h3>{{titles[loop.index-1]}}</h3><br>
+                    <em>{{dates[loop.index-1]}}</em><br>
+                </a>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

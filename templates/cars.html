@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% set active = "Cars" %}
+
+{% block title %}
+Cars
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="container-fluid text-center">
+        <br><br><br>
+        <h3>Cars</h3>
+        <br>
+
+        <div class="row">
+            <div class="col-sm">
+                <figure class="text-center">
+                    <a href="/display_photos/1992_ford_f-150">
+                        <img class="img-responsive" src="static/img/red_truck.jpg" width=400>
+                        <figcaption class="figure-caption">1992 Ford F-150</figcaption>
+                    </a>
+                </figure>
+            </div>
+
+            <div class="col-sm">
+                <figure class="text-center">
+                    <a href="/display_photos/1964_ford_galaxie_500">
+                        <img class="img-responsive" src="static/img/galaxie.jpg" width=400>
+                        <figcaption class="figure-caption">1964 Ford Galaxie 500</figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <figure class="text-center">
+                    <a href="/display_photos/2001_ford_f-350">
+                        <img class="img-responsive" src="static/img/green_truck.jpg" width=400>
+                        <figcaption class="figure-caption">2001 Ford F-350</figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+</body>
+
+</html>
+
+{% endblock %}

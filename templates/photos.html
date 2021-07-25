@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% set active = "Photos" %}
+
+{% block title %}
+Photos
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="container-fluid text-center">
+        <br><br><br>
+        <h3>Photos</h3>
+        <br>
+
+        <div class="row">
+            <div class="col-sm">
+                <figure class="text-center">
+                    <a href="/display_photos/cross_country_september_2019">
+                        <img class="img-responsive" src="static/img/colorado_river.jpg" width=400>
+                        <figcaption class="figure-caption">Maine/Cross-Country Trip - August/September 2019</figcaption>
+                    </a>
+                </figure>
+            </div>
+
+            <div class="col-sm">
+                <figure class="text-center">
+                    <a href="static/img/annecy.jpg">
+                        <img class="img-responsive" src="static/img/annecy.jpg" width=400>
+                        <figcaption class="figure-caption">Switzerland/France - August 2019</figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <figure class="text-center">
+                    <a href="/display_photos/europe_june_2019">
+                        <img class="img-responsive" src="static/img/monserrat.jpg" width=400>
+                        <figcaption class="figure-caption">Europe - June 2019</figcaption>
+                    </a>
+                </figure>
+            </div>
+
+            <div class="col-sm">
+                <figure class="text-center">
+                    <a href="static/img/donostia.jpg">
+                        <img class="img-responsive" src="static/img/donostia.jpg" width=400>
+                        <figcaption class="figure-caption">Spain - March 2019</figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <figure class="text-center">
+                    <a href="static/img/katoomba.jpg">
+                        <img class="img-responsive" src="static/img/katoomba.jpg" width=400>
+                        <figcaption class="figure-caption">Australia - March 2018</figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+</body>
+
+</html>
+
+{% endblock %}

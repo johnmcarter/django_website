@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% set active = "food_travel_blog" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="container-fluid text-center">
+        <br><br><br>
+        <h3>{{title}}</h3>
+        <h5><em>Posted by:</em> {{user}}</h5>
+        <h5>{{date}}</h5>
+        <br>
+        <img class="img-responsive" src="/static/img/{{photo}}" width=500>
+        <br><br>
+        {% for line in body %}
+        <p>{{line}}</p>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

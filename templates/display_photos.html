@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% set active = "Display Photos" %}
+
+{% block title %}
+{{header}}
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="container-fluid text-center">
+        <br><br><br>
+        <h3>{{header}}</h3>
+        <br>
+
+        {% for row in image_list | batch(3) %}
+        <div class="row justify-content-center">
+            {% for image in row %}
+            <a href="/{{image}}">
+                <img class="img-responsive" src="/{{image}}" width=400>
+            </a>
+            {% endfor %}
+        </div>
+        <br><br>
+        {% endfor %}
+
+</body>
+
+</html>
+
+{% endblock %}
