@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve website
+After=network.target
+
+[Service]
+User=john
+Group=www-data
+WorkingDirectory=/home/john/website
+Environment="PATH=/home/john/website/website_venv/bin"
+ExecStart=/home/john/website/website_venv/bin/uwsgi --ini website.ini
+
+[Install]
+WantedBy=multi-user.target
