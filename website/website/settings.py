@@ -1,5 +1,5 @@
 # Created: 2021/08/07 21:08:51
-# Last modified: 2021/08/10 21:51:13
+# Last modified: 2021/08/10 21:52:22
 
 """
 Django settings for website project.
@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-))9^*^(n8@tq&#q)qb6s=_n!p2kj^08r4!0!o0balxb%jwf8sg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['johnjohnphotos.com']
 
