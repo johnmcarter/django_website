@@ -1,5 +1,5 @@
 # Created: 2021/08/07 21:08:51
-# Last modified: 2021/08/10 21:56:17
+# Last modified: 2021/08/10 22:12:22
 
 """
 Django settings for website project.
@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-))9^*^(n8@tq&#q)qb6s=_n!p2kj^08r4!0!o0balxb%jwf8sg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['159.65.217.35']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
