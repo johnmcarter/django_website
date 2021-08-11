@@ -1,7 +1,8 @@
 # Created: 2021/08/07 21:12:00
-# Last modified: 2021/08/09 22:25:40
+# Last modified: 2021/08/10 18:44:22
 
 from django.shortcuts import render
+import boto3
 
 from .models import BlogPost
 
@@ -20,6 +21,28 @@ def photos(request):
         'photo_url': PHOTO_URL
     }
     return render(request, 'photos.html', context)
+
+
+def display_photos(request, id):
+    '''
+    Display photos from a folder by filtering using the id passed in
+    '''
+    header = id.title().replace('_', ' ')
+    photo_bucket = boto3.resource('s3').Bucket('johnjohnphotos-media')
+    image_list = [file.key for file in photo_bucket.objects.all() if id in file.key]
+    context = {
+        'photo_url': PHOTO_URL,
+        'image_list': image_list,
+        'header': header
+    }
+    return render(request, 'display_photos.html', context)
+
+
+def cars(request):
+    context = {
+        'photo_url': PHOTO_URL
+    }
+    return render(request, 'cars.html', context)
 
 
 def food_travel(request):
