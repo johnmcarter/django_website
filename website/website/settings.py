@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-))9^*^(n8@tq&#q)qb6s=_n!p2kj^08r4!0!o0balxb%jwf8sg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.johnjohnphotos.com', 'localhost']
+ALLOWED_HOSTS = ['www.johnjohnphotos.com', 'localhost', '0.0.0.0', 'channels-backend']
 
 
 # Application definition

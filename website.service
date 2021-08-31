@@ -1,13 +1,13 @@
 [Unit]
-Description=uWSGI instance to serve website
+Description=ASGI instance to serve website
 After=network.target
 
 [Service]
 User=john
 Group=www-data
-WorkingDirectory=/home/john/website
-Environment="PATH=/home/john/website/website_venv/bin"
-ExecStart=/home/john/website/website_venv/bin/uwsgi --ini website.ini
+WorkingDirectory=/home/john/django_website/website
+Environment="PATH=/home/john/django_website/website/venv/bin"
+ExecStart=daphne website.asgi:application
 
 [Install]
 WantedBy=multi-user.target
