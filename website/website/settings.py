@@ -1,5 +1,5 @@
 # Created: 2021/08/07 21:08:51
-# Last modified: 2021/09/01 21:17:28
+# Last modified: 2021/09/01 22:33:26
 
 """
 Django settings for website project.
@@ -121,6 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = "/var/www/johnjohnphotos.com/static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
