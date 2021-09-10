@@ -1,12 +1,11 @@
 # Author: John Carter
 # Created: 2021/07/04 17:57:02
-# Last modified: 2021/08/10 21:16:50
+# Last modified: 2021/09/09 23:25:11
 
 GRN=$'\e[1;32m'
 END=$'\e[0m'
 
 echo "[${GRN}INFO${END}] Pulling new code from git"
-cd django_website
 git pull
 
 echo "[${GRN}INFO${END}] Copying data..."
