@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=john
 Group=www-data
-WorkingDirectory=/home/john/django_website/website
-Environment="PATH=/home/john/django_website/website/venv/bin"
-ExecStart=daphne website.asgi:application
+WorkingDirectory=/home/john/django_website/jjp-website
+Environment="PATH=/home/john/django_website/venv/bin"
+ExecStart=daphne jjpsite.asgi:application
 
 [Install]
 WantedBy=multi-user.target
