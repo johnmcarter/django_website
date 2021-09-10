@@ -1,7 +1,7 @@
 '''
 Copyright 2021 by John Carter
 Created: 2021/08/07 21:08:51
-Last modified: 2021/09/09 22:11:27
+Last modified: 2021/09/09 22:44:31
 '''
 
 """
@@ -30,7 +30,7 @@ SITE_DIR = 'jjpsite'
 SECRET_KEY = 'django-insecure-))9^*^(n8@tq&#q)qb6s=_n!p2kj^08r4!0!o0balxb%jwf8sg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.johnjohnphotos.com', 'localhost', '0.0.0.0', 'channels-backend', '127.0.0.1']
 
