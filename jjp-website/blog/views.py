@@ -1,7 +1,7 @@
 '''
 Copyright 2021 by John Carter
 Created: 2021/08/07 21:12:00
-Last modified: 2021/09/09 22:06:26
+Last modified: 2021/09/10 20:27:24
 '''
 from django.shortcuts import render
 import boto3

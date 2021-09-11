@@ -7,18 +7,20 @@ Food & Travel Blogs
 {% block content %}
 
 <body>
-    <div class="container-fluid text-center">
+    <div class="container text-center">
     <br><br><br>
     <h3>Food & Travel Blogs</h3>
     <br>
 
         {% if latest_post_list %}
             {% for post in latest_post_list %}
-                <div class="row">
-                    <div class="col-md-6 col-xs-6 text-right">
-                        <img src="{{ photo_url }}/{{ post.photo_name }}" style="height: 350px;" />
+                <div class="row justify-content-md-center">
+                    <div class="col">
+                        <a href="/food_travel_blog/{{ post.id }}">
+                            <img src="{{ photo_url }}/site-content/{{ post.image }}" style="height: 350px;" />
+                        </a>
                     </div>
-                    <div class="col-md-6 col-xs-6">
+                    <div class="col">
                         <a href="/food_travel_blog/{{ post.id }}">
                             <h3>{{ post.blog_title }}</h3><br>
                             <em>{{ post.pub_date }}</em><br>

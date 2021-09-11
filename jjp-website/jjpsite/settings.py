@@ -1,7 +1,7 @@
 '''
 Copyright 2021 by John Carter
 Created: 2021/08/07 21:08:51
-Last modified: 2021/09/09 23:31:17
+Last modified: 2021/09/10 20:41:05
 '''
 
 """
@@ -30,7 +30,7 @@ SITE_DIR = 'jjpsite'
 SECRET_KEY = 'django-insecure-))9^*^(n8@tq&#q)qb6s=_n!p2kj^08r4!0!o0balxb%jwf8sg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.johnjohnphotos.com', 'localhost', '0.0.0.0', 'channels-backend', '127.0.0.1']
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,10 @@ STATIC_ROOT = "/var/www/johnjohnphotos.com/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+AWS_STORAGE_BUCKET_NAME = "johnjohnphotos-media"
+AWS_LOCATION = "site-content"
+AWS_S3_REGION_NAME = "us-east-1"

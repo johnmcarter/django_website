@@ -7,16 +7,16 @@
 {% block content %}
 
 <body>
-    <div class="container-fluid text-center">
+    <div class="container text-center">
         <br><br><br>
         <h3>{{ post.blog_title }}</h3>
         <h5>{{ post.pub_date }}</h5>
         <br>
-        <div class="row">
-            <div class="col-md-6">
-                <img class="img-responsive" src="{{ photo_url }}/{{ post.photo_name }}" width=500>
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <img class="img-responsive" src="{{ photo_url }}/site-content/{{ post.image }}" width=500>
             </div>
-            <div class="col-md-5">
+            <div class="col">
                 {{ post.content }}
             </div>
         </div>
