@@ -12,21 +12,24 @@
         <h3>{{ header }}</h3>
         <br>
 
-        <section class="gallery">
-            {% if image_list %}
-                {% for image in image_list %}
-                    <a href="{{ photo_url }}/{{ image }}" rel="lightbox">
-                        <img src="{{ photo_url }}/{{ image }}" alt="{{ image }}" 
-                        height="70%" width="70%">
-                    </a>
-                    {% if forloop.counter|divisibleby:4 %}
-                        <div class="clear"></div>
-                    {% endif %}
-                {% endfor %}
-            {% else %}
-                <p>No image available.</p>
+        {% for image in image_list %}
+            {% if forloop.first %}
+                 <div class="row">
             {% endif %}
-        </section>
+            <section class="gallery col-lg-4 col-md-4 col-12">
+                <a href="{{ photo_url }}/{{ image }}" rel="lightbox">
+                    <img src="{{ photo_url }}/{{ image }}" alt="{{ image }}" height="150px"
+                    class="img-thumbnail">
+                </a>
+            </section>
+            {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+            {% endif %}
+            {% if forloop.last %}
+                    </div>
+            {% endif %}
+        {% endfor %}
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simple-lightbox.min.js" integrity="sha512-ZajFBgnksNp8Rj+AbmYe8ueOu45HiSjtf3QpqnRbHlq719m6VK0FkbYIqQ8wEnlVuJ1i9pC+z6Z9ewmDnUTMCg==" crossorigin="anonymous"></script>
 
