@@ -23,12 +23,12 @@ JJPBlog
         {% if latest_post_list %}
             {% for post in latest_post_list %}
                 <div class="row justify-content-md-center">
-                    <div class="col">
+                    <div class="col-md-6">
                         <a href="/blog_post/{{ post.id }}">
                             <img src="{{ photo_url }}/site-content/{{ post.image }}" style="height: 350px;" />
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col-md-6">
                         <a href="/blog_post/{{ post.id }}">
                             <h3>{{ post.blog_title }}</h3><br>
                             <em>{{ post.pub_date }}</em><br>
