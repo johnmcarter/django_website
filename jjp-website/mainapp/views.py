@@ -1,7 +1,7 @@
 '''
 Copyright 2021 by John Carter
 Created: 2021/09/09 21:59:00
-Last modified: 2021/09/09 22:06:01
+Last modified: 2021/09/10 22:24:29
 '''
 from django.shortcuts import render
 import boto3
@@ -16,11 +16,11 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-def photos(request):
+def travel(request):
     context = {
         'photo_url': PHOTO_URL
     }
-    return render(request, 'photos.html', context)
+    return render(request, 'travel.html', context)
 
 
 def display_photos(request, id):

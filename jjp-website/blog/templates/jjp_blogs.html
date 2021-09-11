@@ -1,27 +1,35 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Food & Travel Blogs
+JJPBlog
 {% endblock %}
 
 {% block content %}
 
 <body>
     <div class="container text-center">
-    <br><br><br>
-    <h3>Food & Travel Blogs</h3>
-    <br>
-
+        <br><br><br>
+        <h3>JJPBlog</h3>
+        <br>
+        <div class="text-center col-sm">
+            <p class="fw-lighter">
+            In addition to taking photos, I enjoy documenting places to eat and visit
+            during my travels, both to remind myself of the trips I've taken, and to
+            hopefully help others when planning their own trips. Of course, all these
+            opinions are solely my own, so take them under advisement...
+            </p>
+        </div>
+        <br>
         {% if latest_post_list %}
             {% for post in latest_post_list %}
                 <div class="row justify-content-md-center">
                     <div class="col">
-                        <a href="/food_travel_blog/{{ post.id }}">
+                        <a href="/blog_post/{{ post.id }}">
                             <img src="{{ photo_url }}/site-content/{{ post.image }}" style="height: 350px;" />
                         </a>
                     </div>
                     <div class="col">
-                        <a href="/food_travel_blog/{{ post.id }}">
+                        <a href="/blog_post/{{ post.id }}">
                             <h3>{{ post.blog_title }}</h3><br>
                             <em>{{ post.pub_date }}</em><br>
                         </a>

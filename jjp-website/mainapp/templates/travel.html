@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Photos
+Travel
 {% endblock %}
 
 {% block content %}
@@ -9,15 +9,23 @@ Photos
 <body>
     <div class="container-fluid text-center">
         <br><br><br>
-        <h3>Photos</h3>
+        <h3>Travel</h3>
         <br>
-
-        <div class="row">
+        <div class="text-center col-sm">
+            <p class="fw-lighter">
+            One of my favorite activities is traveling. I love to explore new places, 
+            whether near home or abroad, and document my trips with photos. Below are
+            some pictures from some of the various trips I've taken. My traveling goal 
+            is to reach all seven continents during my lifetime. Three down, and four to go...
+            </p>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
             <div class="col-sm">
                 <figure class="text-center">
                     <a href="/display_photos/cross_country_september_2019">
                         <img class="img-responsive" src="{{photo_url}}/colorado_river.jpg" width=400>
-                        <figcaption class="figure-caption">Maine/Cross-Country Trip - August/September 2019</figcaption>
+                        <figcaption class="figure-caption">United States Cross-Country - August/September 2019</figcaption>
                     </a>
                 </figure>
             </div>
