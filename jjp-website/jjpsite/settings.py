@@ -1,7 +1,7 @@
 '''
 Copyright 2021 by John Carter
 Created: 2021/08/07 21:08:51
-Last modified: 2021/09/10 20:41:05
+Last modified: 2021/12/18 23:19:22
 '''
 
 """
@@ -63,7 +63,7 @@ ROOT_URLCONF = f'{SITE_DIR}.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, f'{SITE_DIR}/templates')],
+        'DIRS': [os.path.join(BASE_DIR, f'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
