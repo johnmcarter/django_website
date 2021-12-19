@@ -1,7 +1,7 @@
 '''
 Copyright 2021 by John Carter
 Created: 2021/09/09 21:59:00
-Last modified: 2021/09/10 22:24:29
+Last modified: 2021/12/18 22:59:01
 '''
 from django.shortcuts import render
 import boto3
@@ -29,7 +29,8 @@ def display_photos(request, id):
     '''
     header = id.title().replace('_', ' ')
     photo_bucket = boto3.resource('s3').Bucket('johnjohnphotos-media')
-    image_list = [file.key for file in photo_bucket.objects.all() if id in file.key]
+    image_list = [file.key for file in photo_bucket.objects.all() if id in file.key and len(file.key.split(".")) == 2]
+
     context = {
         'photo_url': PHOTO_URL,
         'image_list': image_list,
