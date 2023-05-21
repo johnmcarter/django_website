@@ -1,0 +1,33 @@
+[
+    {
+        "name": "app",
+        "image": "052106020971.dkr.ecr.us-east-1.amazonaws.com/johnjohnphotos:latest",
+        "cpu": 1,
+        "memory": 256,
+        "essential": true,
+        "portMappings": [
+            {
+                "containerPort": 80,
+                "hostPort": 80
+            }
+        ],
+        "secrets": [
+            {
+                "name": "SECRET_KEY",
+                "valueFrom": "arn:aws:ssm:us-east-1:052106020971:parameter/johnjohnphotos/site/django-secret-key"
+            }
+        ],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "awslogs-johnjohnphotos",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "awslogs-johnjohnphotos",
+                "awslogs-create-group": "true"
+            }
+        },
+        "healthCheck": {
+            "command": ["CMD-SHELL", "curl -f http://localhost/ || exit 1"]
+        }
+    }
+]

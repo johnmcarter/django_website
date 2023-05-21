@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+    site:
+        image: 052106020971.dkr.ecr.us-east-1.amazonaws.com/johnjohnphotos:${VERSION:-latest}
+        platform: linux/amd64
+        ports:
+            - "8000:80"
+        build: .
+        environment:
+            - DEV=${DEV:-true}
+            - SECRET_KEY=${SECRET_KEY:-none}

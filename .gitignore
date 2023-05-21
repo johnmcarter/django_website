@@ -10,3 +10,6 @@
 
 # dumb mac files
 *.DS_Store
+
+# terraform
+.terraform

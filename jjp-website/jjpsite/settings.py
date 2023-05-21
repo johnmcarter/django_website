@@ -18,6 +18,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import requests
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +33,17 @@ SECRET_KEY = 'django-insecure-))9^*^(n8@tq&#q)qb6s=_n!p2kj^08r4!0!o0balxb%jwf8sg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.johnjohnphotos.com', 'localhost', '0.0.0.0', 'channels-backend', '127.0.0.1']
+ALLOWED_HOSTS = ['www.johnjohnphotos.com', 'localhost', '0.0.0.0', '127.0.0.1', 'johnjohnphotos.ccsoftware.io']
+# https://docs.aws.amazon.com/AmazonECS/latest/userguide/task-metadata-endpoint-v4-fargate.html
+if os.getenv('ECS_CONTAINER_METADATA_URI_V4'):
+    try:
+        fargate_private_ip = requests.get(f"{os.getenv('ECS_CONTAINER_METADATA_URI_V4')}/task").json()["Containers"][0]["Networks"][0]["IPv4Addresses"]
+        ALLOWED_HOSTS.extend(fargate_private_ip)
+    except requests.exceptions.RequestException as ex:
+        logging.exception("Could not get the fargate ip from the metadata endpoint")
+else:
+    logging.warning("The environment variable ECS_CONTAINER_METADATA_URI_V4 is not set. Fargate private ip address will not be added to the ALLOWED_HOSTS setting")
+CSRF_TRUSTED_ORIGINS = ["https://cherryhilleastbaseball.com"]
 
 # Application definition
 
