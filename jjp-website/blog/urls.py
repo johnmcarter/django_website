@@ -1,5 +1,7 @@
-# Created: 2021/08/07 21:15:16
-# Last modified: 2021/09/10 22:41:32
+'''
+Created: 2021/08/07 21:15:16
+Last modified: 2023/05/21 13:14:52
+'''
 
 from django.urls import path
 from . import views
