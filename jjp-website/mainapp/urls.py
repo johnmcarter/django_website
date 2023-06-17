@@ -1,6 +1,6 @@
 '''
 Created: 2021/08/07 21:15:16
-Last modified: 2023/05/21 20:37:30
+Last modified: 2023/06/16 21:20:43
 '''
 
 from django.urls import path
@@ -11,4 +11,5 @@ urlpatterns = [
     path('travel', views.travel, name='travel'),
     path('display_photos/<str:id>', views.display_photos, name='display_photos'),
     path('cars', views.cars, name='cars'),
+    path('research', views.research, name='research'),
 ]

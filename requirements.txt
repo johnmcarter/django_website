@@ -4,3 +4,4 @@ boto3==1.18.32
 daphne==4.0.0
 django-storages==1.13.2
 requests==2.30.0
+pillow==9.5.0

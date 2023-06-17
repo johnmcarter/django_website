@@ -20,25 +20,23 @@ JJPBlog
             </p>
         </div>
         <br>
-        {% if latest_post_list %}
-            {% for post in latest_post_list %}
-                <div class="row justify-content-md-center">
-                    <div class="col-md-6">
-                        <a href="/blog_post/{{ post.id }}">
-                            <img src="{{ photo_url }}/site-content/{{ post.image }}" style="height: 350px;" />
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/blog_post/{{ post.id }}">
-                            <h3>{{ post.blog_title }}</h3><br>
-                            <em>{{ post.pub_date }}</em><br>
-                        </a>
+        {% if posts %}
+        <div class="card-columns justify-content-md-center">
+            {% for post in posts %}
+            <a href="/blog_post/{{ post.id }}">
+                <div class="card">
+                    <img class="card-img-top" src="{{ photo_url }}/site-content/{{ post.image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ post.blog_title }}</h3>
+                        <p class="card-text">Posted on: {{ post.pub_date }}</p>
                     </div>
                 </div>
-                <br>
+            </a>
             {% endfor %}
+        </div>
         {% else %}
-            <p>No posts are available.</p>
+        <h4>No posts are available at this time. Please check back soon!</h4>
+        <br>
         {% endif %}
     </div>
 

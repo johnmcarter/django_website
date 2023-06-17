@@ -4,6 +4,15 @@
 {{ post.blog_title }}
 {% endblock %}
 
+{% block styles %}
+    img.blog-img {
+        object-fit: contain;
+        width: 100%; 
+        height: 100%;
+    }
+{% endblock %}
+
+
 {% block content %}
 
 <body>

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Research
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="container-fluid text-center">
+        <br><br><br>
+        <h3>Research</h3>
+        <br>
+        I am currently a PhD student at Drexel University working with <a href='https://www.cs.drexel.edu/~spiros/' target="_blank">
+            Dr. Spiros Mancoridis</a> on topics at the 
+        intersection of machine learning and cybersecurity. <br>
+        My CV can be found <a href="{{photo_url}}/research/cv.pdf">here</a>.
+
+        <br><br><br>
+
+        <div class="text-center container">
+            <div class="text-left"><h4>Archival publications:</h4></div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" style="text-align: left;">Paper</th>
+                        <th scope="col" style="text-align: left;">Authors</th>
+                        <th scope="col" style="text-align: left;">Venue</th>
+                        <th scope="col" style="text-align: left;">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for paper in papers %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td style="text-align: left;"><a href="{{photo_url}}/research/{{ paper.title }}.pdf">{{ paper.title }}</a></td>
+                        <td style="text-align: left;">{{ paper.authors }}</td>
+                        <td style="text-align: left;">{{ paper.venue }}</td>
+                        <td style="text-align: left;">{{ paper.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+        </div>
+
+        <p>Page last modified: 16 June 2023.</p>
+
+</body>
+
+</html>
+
+{% endblock %}

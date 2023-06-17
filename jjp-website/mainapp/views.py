@@ -1,10 +1,12 @@
 """
 Copyright 2023 by John Carter
 Created: 2021/09/09 21:59:00
-Last modified: 2023/05/21 20:37:05
+Last modified: 2023/06/16 22:06:31
 """
 from django.shortcuts import render
 import boto3
+
+from .models import ResearchPaper
 
 PHOTO_URL = "https://johnjohnphotos-media.s3.amazonaws.com"
 
@@ -14,12 +16,10 @@ def index(request):
     context = {"photo_url": PHOTO_URL}
     return render(request, "index.html", context)
 
-
 def travel(request):
     """Show travel page"""
     context = {"photo_url": PHOTO_URL}
     return render(request, "travel.html", context)
-
 
 def display_photos(request, id):
     """Display photos from a folder by filtering using the id passed in"""
@@ -36,8 +36,13 @@ def display_photos(request, id):
                "header": header}
     return render(request, "display_photos.html", context)
 
-
 def cars(request):
     '''Show car page'''
     context = {"photo_url": PHOTO_URL}
     return render(request, "cars.html", context)
+
+def research(request):
+    '''Show research page'''
+    context = {"photo_url": PHOTO_URL,
+               "papers": ResearchPaper.objects.order_by('-date')}
+    return render(request, "research.html", context)
