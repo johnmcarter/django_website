@@ -1,15 +1,1 @@
-# images and videos
-*.jpg
-*.jpeg
-*.JPG
-*.png
-*.gif
-*.mp4
-*.ico
-*.MOV
-
-# dumb mac files
-*.DS_Store
-
-# terraform
-.terraform
+venv

@@ -20,11 +20,24 @@ Travel
             </p>
         </div>
         <br>
+        <div class="row gallery">
+            {% for album_column in album_columns %}
+            <div class="col-md">
+                {% for album in album_column.images %}
+                <a href="{% url 'chebsite:photos' %}?album={{ album.name }}">
+                    <img class="img-thumbnail d-block w-100" src="{{ SITE_CONTENT_BASE_URL }}{{ album.image }}">
+                    <p class="album-name">{{ album.name }}</p>
+                </a>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+        
         <div class="row justify-content-center">
             <div class="col">
                 <figure class="text-center">
                     <a href="/display_photos/germany_italy_october_2022">
-                        <img class="img-responsive" src="{{photo_url}}/germany.jpg" width=400>
+                        <img class="img-fluid" src="{{photo_url}}/germany.jpg" width=400>
                         <figcaption class="figure-caption">Germany/Switzerland/Liechtenstein/Austria/Italy <br> October 2022</figcaption>
                     </a>
                 </figure>
@@ -32,7 +45,7 @@ Travel
             <div class="col">
                 <figure class="text-center">
                     <a href="/display_photos/cross_country_september_2019">
-                        <img class="img-responsive" src="{{photo_url}}/colorado_river.jpg" width=400>
+                        <img class="img-fluid" src="{{photo_url}}/colorado_river.jpg" width=400>
                         <figcaption class="figure-caption">United States Cross-Country <br> August/September 2019</figcaption>
                     </a>
                 </figure>
@@ -40,7 +53,7 @@ Travel
             <div class="col">
                 <figure class="text-center">
                     <a href="{{photo_url}}/annecy.jpg">
-                        <img class="img-responsive" src="{{photo_url}}/annecy.jpg" width=400>
+                        <img class="img-fluid" src="{{photo_url}}/annecy.jpg" width=400>
                         <figcaption class="figure-caption">Switzerland/France <br> August 2019</figcaption>
                     </a>
                 </figure>
@@ -51,7 +64,7 @@ Travel
             <div class="col">
                 <figure class="text-center">
                     <a href="/display_photos/europe_june_2019">
-                        <img class="img-responsive" src="{{photo_url}}/monserrat.jpg" width=400>
+                        <img class="img-fluid" src="{{photo_url}}/monserrat.jpg" width=400>
                         <figcaption class="figure-caption">England/France/Spain/Ireland/Northern Ireland/Scotland <br> June 2019</figcaption>
                     </a>
                 </figure>
@@ -59,7 +72,7 @@ Travel
             <div class="col">
                 <figure class="text-center">
                     <a href="{{photo_url}}/donostia.jpg">
-                        <img class="img-responsive" src="{{photo_url}}/donostia.jpg" width=400>
+                        <img class="img-fluid" src="{{photo_url}}/donostia.jpg" width=400>
                         <figcaption class="figure-caption">Spain <br> March 2019</figcaption>
                     </a>
                 </figure>
@@ -67,7 +80,7 @@ Travel
             <div class="col">
                 <figure class="text-center">
                     <a href="{{photo_url}}/katoomba.jpg">
-                        <img class="img-responsive" src="{{photo_url}}/katoomba.jpg" width=400>
+                        <img class="img-fluid" src="{{photo_url}}/katoomba.jpg" width=400>
                         <figcaption class="figure-caption">Australia <br> March 2018</figcaption>
                     </a>
                 </figure>
