@@ -11,44 +11,24 @@ Cars
         <br><br><br>
         <h3>Cars</h3>
         <br>
-        
+
         <div class="row justify-content-center">
-            <div class="col-sm">
-                <figure class="text-center">
-                    <a href="/display_photos/1992_ford_f-150">
-                        <img class="img-fluid" src="{{photo_url}}/red_truck.jpg" width=400>
-                        <figcaption class="figure-caption">1992 Ford F-150 Custom</figcaption>
-                    </a>
-                </figure>
-            </div>
-            <div class="col-sm">
-                <figure class="text-center">
-                    <a href="/display_photos/1964_ford_galaxie_500">
-                        <img class="img-fluid" src="{{photo_url}}/galaxie.jpg" width=400>
-                        <figcaption class="figure-caption">1964 Ford Galaxie 500</figcaption>
-                    </a>
-                </figure>
-            </div>
-            <div class="col-sm">
-                <figure class="text-center">
-                    <a href="/display_photos/2021_ford_bronco">
-                        <img class="img-fluid" src="{{photo_url}}/2021_ford_bronco/bronco.jpg" width=400>
-                        <figcaption class="figure-caption">2021 Ford Bronco First Edition</figcaption>
-                    </a>
-                </figure>
-            </div>
+            {% for car in cars %}
+                <div class="col-sm">
+                    <figure class="text-center">
+                        <a href="{{ photo_url }}/{{ car.name }}.jpg">
+                            <img class="img-fluid" src="{{ photo_url }}/{{ car.name }}.jpg" width=400>
+                            <figcaption class="figure-caption">{{ car.name }}</figcaption>
+                        </a>
+                    </figure>
+                </div>
+                {% if forloop.counter|divisibleby:"3" %}
+                    </div>
+                    <div class="row justify-content-center">
+                {% endif %}
+            {% endfor %}
         </div>
-        <br>
-        <div class="row">
-            <div class="col-sm">
-                <figure class="text-center">
-                    <a href="/display_photos/2001_ford_f-350">
-                        <img class="img-fluid" src="{{photo_url}}/green_truck.jpg" width=400>
-                        <figcaption class="figure-caption">2001 Ford F-350 XLT</figcaption>
-                    </a>
-                </figure>
-            </div>
-        </div>
+    </div>
 </body>
 
 </html>

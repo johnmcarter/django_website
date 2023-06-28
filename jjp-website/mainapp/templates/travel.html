@@ -20,21 +20,9 @@ Travel
             </p>
         </div>
         <br>
-        <div class="row gallery">
-            {% for album_column in album_columns %}
-            <div class="col-md">
-                {% for album in album_column.images %}
-                <a href="{% url 'chebsite:photos' %}?album={{ album.name }}">
-                    <img class="img-thumbnail d-block w-100" src="{{ SITE_CONTENT_BASE_URL }}{{ album.image }}">
-                    <p class="album-name">{{ album.name }}</p>
-                </a>
-                {% endfor %}
-            </div>
-            {% endfor %}
-        </div>
         
         <div class="row justify-content-center">
-            <div class="col">
+            <div class="col-sm">
                 <figure class="text-center">
                     <a href="/display_photos/germany_italy_october_2022">
                         <img class="img-fluid" src="{{photo_url}}/germany.jpg" width=400>
@@ -42,7 +30,7 @@ Travel
                     </a>
                 </figure>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <figure class="text-center">
                     <a href="/display_photos/cross_country_september_2019">
                         <img class="img-fluid" src="{{photo_url}}/colorado_river.jpg" width=400>
@@ -50,7 +38,7 @@ Travel
                     </a>
                 </figure>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <figure class="text-center">
                     <a href="{{photo_url}}/annecy.jpg">
                         <img class="img-fluid" src="{{photo_url}}/annecy.jpg" width=400>
@@ -61,7 +49,7 @@ Travel
         </div>
         <br>
         <div class="row">
-            <div class="col">
+            <div class="col-sm">
                 <figure class="text-center">
                     <a href="/display_photos/europe_june_2019">
                         <img class="img-fluid" src="{{photo_url}}/monserrat.jpg" width=400>
@@ -69,7 +57,7 @@ Travel
                     </a>
                 </figure>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <figure class="text-center">
                     <a href="{{photo_url}}/donostia.jpg">
                         <img class="img-fluid" src="{{photo_url}}/donostia.jpg" width=400>
@@ -77,7 +65,7 @@ Travel
                     </a>
                 </figure>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <figure class="text-center">
                     <a href="{{photo_url}}/katoomba.jpg">
                         <img class="img-fluid" src="{{photo_url}}/katoomba.jpg" width=400>
