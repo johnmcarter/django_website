@@ -24,17 +24,25 @@ def travel(request):
 
 
 def display_photos(request, id):
-    """Display photos from a folder by filtering using the id passed in"""
     header = id.title().replace("_", " ")
-    photo_bucket = boto3.resource("s3").Bucket("johnjohnphotos-media")
-    image_list = [
-        file.key
-        for file in photo_bucket.objects.all()
-        if id in file.key and len(file.key.split(".")) == 2
-    ]
 
-    context = {"photo_url": PHOTO_URL, "image_list": image_list, "header": header}
-    return render(request, "display_photos.html", context)
+    try:
+        s3_resource = boto3.resource("s3")
+        photo_bucket = s3_resource.Bucket("johnjohnphotos-media")
+
+        image_list = [
+            file.key
+            for file in photo_bucket.objects.all()
+            if id in file.key and len(file.key.split(".")) == 2
+        ]
+
+        context = {"photo_url": PHOTO_URL, "image_list": image_list, "header": header}
+        return render(request, "display_photos.html", context)
+    
+    except Exception as e:
+        print(f"Error accessing S3 bucket: {e}")
+        context = {"header": header, "error": "Unable to retrieve photos. Please try again later 😕"}
+        return render(request, "display_photos.html", context)
 
 
 def cars(request):

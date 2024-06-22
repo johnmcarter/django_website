@@ -25,7 +25,8 @@ DEBUG = DEV
 ALLOWED_HOSTS = [
     "www.johnjohnphotos.com",
     "localhost",
-    "0.0.0.0",
+    ".johnjohnphotos.com",
+    #"0.0.0.0",
     "127.0.0.1",
 ]
 # https://docs.aws.amazon.com/AmazonECS/latest/userguide/task-metadata-endpoint-v4-fargate.html
