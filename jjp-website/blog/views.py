@@ -12,7 +12,7 @@ PHOTO_URL = 'https://johnjohnphotos-media.s3.amazonaws.com'
 
 def jjp_blog(request):
     '''Display listing of most current blog posts'''
-    posts = BlogPost.objects.order_by('-pub_date')[:5]
+    posts = BlogPost.objects.order_by('-pub_date')[:10]
     context = {
         'photo_url': PHOTO_URL,
         'posts': posts,

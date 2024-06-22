@@ -21,22 +21,23 @@ JJPBlog
         </div>
         <br>
         {% if posts %}
-        <div class="card-columns justify-content-md-center">
-            {% for post in posts %}
-            <a href="/blog_post/{{ post.id }}">
-                <div class="card">
-                    <img class="card-img-top" src="{{ photo_url }}/site-content/{{ post.image }}" alt="Card image cap">
-                    <div class="card-body">
-                        <h3 class="card-title">{{ post.blog_title }}</h3>
-                        <p class="card-text">Posted on: {{ post.pub_date }}</p>
+            <div class="d-flex flex-wrap justify-content-center">
+                {% for post in posts %}
+                <a href="/blog_post/{{ post.id }}" class="m-2 text-decoration-none" style="flex: 1 0 30%; max-width: 30%;">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ photo_url }}/site-content/{{ post.image }}" alt="Card image cap" style="height: 300px; object-fit: cover;">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ post.blog_title }}</h3>
+                            <p class="card-text">{{ post.location }}</p>
+                            <p class="card-text">{{ post.pub_date }}</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
+                </a>
+                {% endfor %}
+            </div>
         {% else %}
-        <h4>No posts are available at this time. Please check back soon!</h4>
-        <br>
+            <h4>No posts are available at this time. Please check back soon!</h4>
+            <br>
         {% endif %}
     </div>
 

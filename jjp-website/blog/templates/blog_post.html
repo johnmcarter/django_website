@@ -4,32 +4,29 @@
 {{ post.blog_title }}
 {% endblock %}
 
-{% block styles %}
-    img.blog-img {
-        object-fit: contain;
-        width: 100%; 
-        height: 100%;
-    }
-{% endblock %}
-
 
 {% block content %}
 
 <body>
-    <div class="container text-center">
-        <br><br><br>
-        <h3>{{ post.blog_title }}</h3>
-        <h5>{{ post.pub_date }}</h5>
-        <br>
-        <div class="row justify-content-md-center">
-            <div class="col-md-6">
-                <img class="img-responsive" src="{{ photo_url }}/site-content/{{ post.image }}" width=500>
+    <br>
+    <div class="container my-5 text-center">
+        <div class="mb-4">
+            <h3 class="display-4">{{ post.blog_title }}</h3>
+            <h4 class="text-muted">{{ post.location }}</h4>
+            <h6 class="text-secondary">{{ post.pub_date }}</h6>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 mb-4">
+                <img class="img-fluid rounded" src="{{ photo_url }}/site-content/{{ post.image }}" alt="Blog image">
             </div>
-            <div class="col-md-6">
-                {{ post.content }}
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="text-left">
+                    <p class="lead">{{ post.content }}</p>
+                </div>
             </div>
         </div>
     </div>
+    
 </body>
 
 </html>
