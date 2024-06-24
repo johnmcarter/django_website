@@ -25,10 +25,11 @@ DEBUG = DEV
 ALLOWED_HOSTS = [
     "www.johnjohnphotos.com",
     "localhost",
-    ".johnjohnphotos.com",
+    "johnjohnphotos.com",
     #"0.0.0.0",
     "127.0.0.1",
 ]
+
 # https://docs.aws.amazon.com/AmazonECS/latest/userguide/task-metadata-endpoint-v4-fargate.html
 if os.getenv("ECS_CONTAINER_METADATA_URI_V4"):
     try:

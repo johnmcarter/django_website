@@ -4,31 +4,25 @@
 {{ post.blog_title }}
 {% endblock %}
 
-
 {% block content %}
-
-<body>
-    <br>
-    <div class="container my-5 text-center">
-        <div class="mb-4">
-            <h3 class="display-4">{{ post.blog_title }}</h3>
-            <h4 class="text-muted">{{ post.location }}</h4>
-            <h6 class="text-secondary">{{ post.pub_date }}</h6>
+<div class="container my-5">
+    <div class="text-center mb-4">
+        <h3 class="display-4">{{ post.blog_title }}</h3>
+        <h4 class="text-muted">{{ post.location }}</h4>
+        <h6 class="text-secondary">{{ post.pub_date }}</h6>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-4">
+            <a href="{{ photo_url }}/site-content/{{ post.image }}">
+                <img class="img-fluid rounded clickable-image" src="{{ photo_url }}/site-content/{{ post.image }}" alt="Blog image">
+            </a>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6 mb-4">
-                <img class="img-fluid rounded" src="{{ photo_url }}/site-content/{{ post.image }}" alt="Blog image">
-            </div>
-            <div class="col-md-6 d-flex align-items-center">
-                <div class="text-left">
-                    <p class="lead">{{ post.content }}</p>
-                </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <div class="text-left">
+                <p class="lead">{{ post.content }}</p>
+                <p class="lead text-center"><a href="{{ post.website }}" target="_blank">{{ post.website }}</a></p>
             </div>
         </div>
     </div>
-    
-</body>
-
-</html>
-
+</div>
 {% endblock %}

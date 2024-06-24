@@ -7,28 +7,28 @@ Cars
 {% block content %}
 
 <body>
-    <div class="container-fluid text-center">
-        <br><br><br>
-        <h3>Cars</h3>
-        <br>
-
+    <div class="container-fluid text-center my-5">
+        <div class="mb-5">
+            <h3 class="display-4">Cars</h3>
+        </div>
+    
         <div class="row justify-content-center">
             {% for car in cars %}
-                <div class="col-sm">
+                <div class="col-md-4 mb-4">
                     <figure class="text-center">
                         <a href="{{ photo_url }}/{{ car.name }}.jpg">
-                            <img class="img-fluid" src="{{ photo_url }}/{{ car.name }}.jpg" width=400>
-                            <figcaption class="figure-caption">{{ car.name }}</figcaption>
+                            <img class="img-fluid rounded shadow" src="{{ photo_url }}/{{ car.name }}.jpg" alt="{{ car.name }}">
+                            <figcaption class="figure-caption mt-2">{{ car.name }}</figcaption>
                         </a>
                     </figure>
                 </div>
-                {% if forloop.counter|divisibleby:"3" %}
-                    </div>
-                    <div class="row justify-content-center">
+                {% if forloop.counter|divisibleby:"3" and not forloop.last %}
+                    </div><div class="row justify-content-center">
                 {% endif %}
             {% endfor %}
         </div>
     </div>
+    
 </body>
 
 </html>

@@ -1,9 +1,8 @@
 '''
-Copyright 2023 by John Carter
-Created: 2021/08/07 21:12:00
-Last modified: 2023/05/26 21:22:32
+Copyright 2024 by John Carter
 '''
 from django.shortcuts import render
+from django.core.paginator import Paginator
 
 from .models import BlogPost
 
@@ -12,7 +11,12 @@ PHOTO_URL = 'https://johnjohnphotos-media.s3.amazonaws.com'
 
 def jjp_blog(request):
     '''Display listing of most current blog posts'''
-    posts = BlogPost.objects.order_by('-pub_date')[:10]
+    post_list = BlogPost.objects.order_by('-pub_date')
+    paginator = Paginator(post_list, 6)  
+
+    page_number = request.GET.get('page')
+    posts = paginator.get_page(page_number)
+
     context = {
         'photo_url': PHOTO_URL,
         'posts': posts,

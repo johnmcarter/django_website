@@ -11,4 +11,5 @@ class BlogPost(models.Model):
     content = models.TextField()
     pub_date = models.DateTimeField("date published")
     location = models.CharField(max_length=200)
+    website = models.URLField()
     image = models.ImageField(upload_to="blog_images/")

@@ -7,99 +7,102 @@ Travel
 {% block content %}
 
 <body>
-    <div class="container-fluid text-center">
-        <br><br><br>
-        <h3>Travel</h3>
-        <br>
-        <div class="text-center col-sm">
-            <p class="fw-lighter">
-            One of my favorite activities is traveling. I love to explore new places, 
-            whether near home or abroad, and document my trips with photos. Below are
-            some pictures from some of the various trips I've taken. My traveling goal 
-            is to reach all seven continents during my lifetime. Four down, and three to go...
+    <div class="container-fluid text-center my-5">
+        <div class="mb-5">
+            <h3 class="display-4">Travel</h3>
+        </div>
+        <div class="col-sm text-center mb-5">
+            <p class="fw-lighter lead">
+                One of my favorite activities is traveling. I love to explore new places, 
+                whether near home or abroad, and document my trips with photos. Below are
+                some pictures from some of the various trips I've taken. My traveling goal 
+                is to reach all seven continents during my lifetime. Four down, and three to go...
             </p>
         </div>
-        <br>
         
-        <div class="row justify-content-center">
-            <div class="col-sm">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-4 mb-4">
                 <figure class="text-center">
-                    <a href="{{photo_url}}/hawaii.jpg">
-                        <img class="img-fluid" src="{{photo_url}}/hawaii.jpg" width=400>
-                        <figcaption class="figure-caption">Hawaii <br> January 2024</figcaption>
+                    <a href="{{ photo_url }}/hawaii.jpg">
+                        <img class="img-fluid rounded shadow" src="{{ photo_url }}/hawaii.jpg" alt="Hawaii">
+                        <figcaption class="figure-caption mt-2">Hawaii <br> January 2024</figcaption>
                     </a>
                 </figure>
             </div>
-            <div class="col-sm">
+            <div class="col-md-4 mb-4">
                 <figure class="text-center">
-                    <a href="{{photo_url}}/canary.jpg">
-                        <img class="img-fluid" src="{{photo_url}}/canary.jpg" width=400>
-                        <figcaption class="figure-caption">Spain/Canary Islands <br> July 2023</figcaption>
+                    <a href="{{ photo_url }}/canary.jpg">
+                        <img class="img-fluid rounded shadow" src="{{ photo_url }}/canary.jpg" alt="Spain/Canary Islands">
+                        <figcaption class="figure-caption mt-2">Spain/Canary Islands <br> July 2023</figcaption>
                     </a>
                 </figure>
             </div>
-            <div class="col-sm">
+            <div class="col-md-4 mb-4">
                 <figure class="text-center">
                     <a href="/display_photos/germany_italy_october_2022">
-                        <img class="img-fluid" src="{{photo_url}}/germany.jpg" width=400>
-                        <figcaption class="figure-caption">Germany/Switzerland/Liechtenstein/Austria/Italy <br> October 2022</figcaption>
+                        <img class="img-fluid rounded shadow" src="{{ photo_url }}/germany.jpg" alt="Germany/Switzerland/Liechtenstein/Austria/Italy">
+                        <figcaption class="figure-caption mt-2">Germany/Switzerland/Liechtenstein/Austria/Italy <br> October 2022</figcaption>
                     </a>
                 </figure>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-sm">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-4 mb-4">
                 <figure class="text-center">
                     <a href="/display_photos/cross_country_september_2019">
-                        <img class="img-fluid" src="{{photo_url}}/colorado_river.jpg" width=400>
-                        <figcaption class="figure-caption">United States Cross-Country <br> August/September 2019</figcaption>
+                        <img class="img-fluid rounded shadow" src="{{ photo_url }}/colorado_river.jpg" alt="United States Cross-Country">
+                        <figcaption class="figure-caption mt-2">United States Cross-Country <br> August/September 2019</figcaption>
                     </a>
                 </figure>
             </div>
-            <div class="col-sm">
+            <div class="col-md-4 mb-4">
                 <figure class="text-center">
-                    <a href="{{photo_url}}/annecy.jpg">
-                        <img class="img-fluid" src="{{photo_url}}/annecy.jpg" width=400>
-                        <figcaption class="figure-caption">Switzerland/France <br> August 2019</figcaption>
+                    <a href="{{ photo_url }}/annecy.jpg">
+                        <img class="img-fluid rounded shadow" src="{{ photo_url }}/annecy.jpg" alt="Switzerland/France">
+                        <figcaption class="figure-caption mt-2">Switzerland/France <br> August 2019</figcaption>
                     </a>
                 </figure>
             </div>
-            <div class="col-sm">
+            <div class="col-md-4 mb-4">
                 <figure class="text-center">
                     <a href="/display_photos/europe_june_2019">
-                        <img class="img-fluid" src="{{photo_url}}/monserrat.jpg" width=400>
-                        <figcaption class="figure-caption">England/France/Spain/Ireland/Northern Ireland/Scotland <br> June 2019</figcaption>
+                        <img class="img-fluid rounded shadow" src="{{ photo_url }}/monserrat.jpg" alt="England/France/Spain/Ireland/Northern Ireland/Scotland">
+                        <figcaption class="figure-caption mt-2">England/France/Spain/Ireland/Northern Ireland/Scotland <br> June 2019</figcaption>
                     </a>
                 </figure>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-sm">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-4 mb-4">
                 <figure class="text-center">
-                    <a href="{{photo_url}}/donostia.jpg">
-                        <img class="img-fluid" src="{{photo_url}}/donostia.jpg" width=400>
-                        <figcaption class="figure-caption">Spain <br> March 2019</figcaption>
+                    <a href="{{ photo_url }}/donostia.jpg">
+                        <img class="img-fluid rounded shadow" src="{{ photo_url }}/donostia.jpg" alt="Spain">
+                        <figcaption class="figure-caption mt-2">Spain <br> March 2019</figcaption>
                     </a>
                 </figure>
             </div>
-            <div class="col-sm">
+            <div class="col-md-4 mb-4">
                 <figure class="text-center">
-                    <a href="{{photo_url}}/katoomba.jpg">
-                        <img class="img-fluid" src="{{photo_url}}/katoomba.jpg" width=400>
-                        <figcaption class="figure-caption">Australia <br> March 2018</figcaption>
+                    <a href="{{ photo_url }}/katoomba.jpg">
+                        <img class="img-fluid rounded shadow" src="{{ photo_url }}/katoomba.jpg" alt="Australia">
+                        <figcaption class="figure-caption mt-2">Australia <br> March 2018</figcaption>
                     </a>
                 </figure>
             </div>
         </div>
-        <hr>
-        <h3 class="text-left">My progress so far...</h3>
-        <br>
-        <div>
-            <iframe src="https://visitedplaces.com/embed/?map=world&projection=geoNaturalEarth1&theme=dark-yellow&water=1&graticule=0&names=1&duration=2000&placeduration=100&slider=0&autoplay=0&autozoom=none&home=US&places=1998~US~2.1_-106.9_37.4_-246.4_0*2008~CA*2018~AU~3.5_141.4_-29.3_-145.7_0*2019~CH_GB_IE_ES_FR~4.1_4.2_48.7_-1.1_0*2022~IT_DE_AT_CH_LI" style="width: 100%; height: 600px;"></iframe>
+        
+        <hr class="my-5">
+        
+        <div class="mb-5">
+            <h3 class="text-left">My progress so far...</h3>
+        </div>
+        <div class="mb-5">
+            <iframe src="https://visitedplaces.com/embed/?map=world&projection=geoNaturalEarth1&theme=dark-yellow&water=1&graticule=0&names=1&duration=2000&placeduration=100&slider=0&autoplay=0&autozoom=none&home=US&places=1998~US~2.1_-106.9_37.4_-246.4_0*2008~CA*2018~AU~3.5_141.4_-29.3_-145.7_0*2019~CH_GB_IE_ES_FR~4.1_4.2_48.7_-1.1_0*2022~IT_DE_AT_CH_LI" style="width: 100%; height: 600px; border: none;"></iframe>
         </div>
     </div>
+    
 </body>
 
 </html>
