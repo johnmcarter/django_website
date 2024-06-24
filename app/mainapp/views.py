@@ -1,20 +1,26 @@
 """
-Copyright 2023 by John Carter
-Created: 2021/09/09 21:59:00
-Last modified: 2023/06/27 21:41:18
+Copyright 2024 by John Carter
 """
 from django.shortcuts import render
 import boto3
 
 from .models import ResearchPaper, Car
+from blog.models import BlogPost
 
 PHOTO_URL = "https://johnjohnphotos-media.s3.amazonaws.com"
 
 
 def index(request):
     """Show homepage"""
-    context = {"photo_url": PHOTO_URL}
-    return render(request, "index.html", context)
+    posts = BlogPost.objects.order_by('-pub_date')[:3]  
+    papers = ResearchPaper.objects.order_by('-date')[:3]  
+
+    context = {
+        'photo_url': PHOTO_URL,
+        'posts': posts,
+        'papers': papers,
+    }
+    return render(request, 'index.html', context)
 
 
 def travel(request):

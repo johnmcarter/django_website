@@ -9,7 +9,7 @@ RUN pip install -r /tmp/requirements.txt && \
     rm -rf /tmp
 
 # Copy the app
-COPY jjp-website /app/
+COPY app /app/
 
 WORKDIR /app
 

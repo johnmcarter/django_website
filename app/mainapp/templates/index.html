@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="container-fluid px-0">
+        <img src="{{ photo_url }}/badlands.jpg" style="width: 100%; max-height: 600px; object-fit: cover;">
+    </div>
+
+    <div class="container mt-5" style="max-width: 95%;">
+        <div class="text-center mb-5">
+            <h3 class="display-4">Welcome to John John Photos</h3>
+            <p class="lead">
+                Whether you're looking for travel tips, in-depth machine learning research findings, or simply curious about my experiences, you'll find something of interest here.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h2 class="mb-4"><a href="{% url 'jjp_blog' %}" class="text-decoration-none">Recent Blog Posts</a></h2>
+                <div class="list-group">
+                    {% for post in posts %}
+                    <a href="/blog_post/{{ post.id }}" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ post.blog_title }}</h5>
+                            <small>{{ post.pub_date }}</small>
+                        </div>
+                        <p class="mb-1">{{ post.location }}</p>
+                    </a>
+                    {% empty %}
+                    <div class="list-group-item">No blog posts available.</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h2 class="mb-4"><a href="{% url 'research' %}" class="text-decoration-none">Recent Research Papers</a></h2>
+                <div class="list-group">
+                    {% for paper in papers %}
+                    <a href="{{ photo_url }}/research/{{ paper.title }}.pdf" class="list-group-item list-group-item-action" target="_blank">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ paper.title }}</h5>
+                            <small>{{ paper.date }}</small>
+                        </div>
+                    </a>
+                    {% empty %}
+                    <div class="list-group-item">No research papers available.</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}
