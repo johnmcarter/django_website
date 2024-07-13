@@ -5,5 +5,5 @@ locals {
   vpc_id            = "vpc-39dae340"
   subnet_id         = "subnet-94dd8998"
   security_group_id = "sg-09b28c284a4e8c47e"
-  host_name         = "www.johnjohnphotos.com"
+  hosts             = ["www.johnjohnphotos.com", "johnjohnphotos.com"]
 }

@@ -29,7 +29,7 @@ resource "aws_lb_listener_rule" "fw_to_app" {
 
   condition {
     host_header {
-      values = [local.host_name]
+      values = local.hosts
     }
   }
 }
