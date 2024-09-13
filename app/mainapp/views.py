@@ -13,7 +13,7 @@ PHOTO_URL = "https://johnjohnphotos-media.s3.amazonaws.com"
 def index(request):
     """Show homepage"""
     posts = BlogPost.objects.order_by('-pub_date')[:3]  
-    papers = ResearchPaper.objects.order_by('-date')[:3]  
+    papers = ResearchPaper.objects.order_by('-date')[:4]  
 
     context = {
         'photo_url': PHOTO_URL,
