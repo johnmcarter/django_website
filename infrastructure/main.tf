@@ -16,6 +16,7 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+  profile = "prod"
   default_tags {
     tags = {
       project = local.project_name
